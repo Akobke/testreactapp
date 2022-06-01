@@ -5,8 +5,7 @@ import FormButton from './button'
 function App() {
   return (
     <div className="App">
-      <InputFeild/>
-      <FormButton text="Submit"/>
+      <InputFeild text="Submit"/>
     </div>
   );
 }
