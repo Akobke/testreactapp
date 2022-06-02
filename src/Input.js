@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import './Input.css'
 
 function InputFeild(props){
     const existingTodos = localStorage.getItem('todos');
@@ -13,14 +14,19 @@ function InputFeild(props){
     
     return(
         <>
-            <input type="text" value={text} onChange={e => setText(e.target.value)}/>
-            <input type='submit' value={props.text} onClick={() =>{
+        <div className='form-group'>
+            <form>
+            <input type="text" value={text} className='inputFeild' onChange={e => setText(e.target.value)}/>
+            <br></br>
+            <input type='submit' value={props.text} className='button' onClick={() =>{
                 setInput(arr => [...arr, text]);
                 setText('');
             }}/>
-            <input type='button' value='clear' onClick={() =>{
+            <input type='button' value='clear' className='button' onClick={() =>{
                 setInput(inputt => []);
             }}/>
+            </form>
+        </div>
         <div>
             <ol>
             {inputt.map(userInput => (<li key={userInput}>{userInput}</li>))}
